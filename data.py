@@ -1,3 +1,4 @@
+import datetime
 import random
 
 class Site:
@@ -37,5 +38,8 @@ class OrderData:
                     "Спасибо, что заботитесь о сохранности самоката при его доставке."]
     comment = random.choice(comment_list)
 
-    date_list = ["20.01.2024", "31.01.2024", "15.02.2024"]
-    date = random.choice(date_list)
+
+    #  генерируем рандомную дату из будущего
+    current_date = datetime.datetime.now()
+    future_date = current_date + datetime.timedelta(days=random.randint(1, 365))
+    date = future_date.strftime("%d.%m.%Y")
