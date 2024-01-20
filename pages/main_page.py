@@ -12,7 +12,7 @@ class MainPage(BasePage):
     def click_logo_scooter(self):
         self.click_element(MainPageLocators.SCOOTER_LOGO)
 
-    @allure.step("Проверить, что открылась новая вкладка Дзен")
+    @allure.step("Переключиться на новое окно и ожидаем, что открылась новая вкладка Дзен")
     def check_redirect_dzen(self):
         self.switch_to_new_window()
         return self.wait_for_element(MainPageLocators.DZEN_HEADER)
